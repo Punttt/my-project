@@ -60,9 +60,11 @@ function handleDelete(e: Event): void {
         return;
     }
 
+    // Filtrera courses och ta bort raden som knappen tillhör
     const code = target.dataset.code;
     courses = courses.filter((course) => course.code !== code);
 
+    // Renderar den uppdaterade listan
     renderCourses();
 }
 
