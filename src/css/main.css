@@ -6,7 +6,7 @@
 
 body{
     background-color: tomato;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 12px;
     line-height: 1.6;
 }
@@ -20,11 +20,13 @@ main {
 
 table{
     width: 100%;
+    border-collapse: collapse;
 }
 
 th {
-    font-size: 0.8rem;
-    font-variant:small-caps
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 td, th {
