@@ -28,23 +28,41 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             name: "Webbutveckling I",
-            code: "DT084G",
+            code: "DT045T",
             progression: "A",
             url: "https://miun.se/webbutveckling1"
         },
         {
             name: "Webbutveckling I",
-            code: "DT084G",
+            code: "DT031H",
             progression: "A",
             url: "https://miun.se/webbutveckling1"
         }
     ];
 
+    // Hämtar kurslista
+    const courseListEl = document.querySelector("#course-list") as HTMLElement;
+
+    if(courseListEl){
+        courseListEl.addEventListener("click", handleDelete);
+    }
+
     // Renderar ut kurslistan
     renderCourses();
 });
 
+// Funktion raderar kurslista
+function handleDelete(e: Event): void {
+    const target = e.target as HTMLElement;
 
+    // Filtrera bort allt som inte är knappen
+    if(target.tagName !== "BUTTON") {
+        return;
+    }
+
+    // Testkör koden för att se så knappen fungerar
+    console.log(`Kurskod: ${target.dataset.code}`);
+}
 
 // Funktion Hanterar formulär och input av nya kurser
 function handleSubmit(e: SubmitEvent): void {
