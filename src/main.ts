@@ -48,6 +48,10 @@ function handleSubmit(e: SubmitEvent): void {
 }
 
 function renderCourses(): void{
+    // Hämtar elementet där kurserna visas
+    const coursList = document.querySelector("#course-list") as HTMLElement;
+
     // Tömmer befintligt innehåll i Kurslistan.
-    console.log("Testar funktionen för rendering.")
+    coursList.innerHTML = "";
+    
 }
