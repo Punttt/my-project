@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Lägger till eventlyssnare på formuläret
     form.addEventListener("submit", handleSubmit);
 
-    // Testdata
+    // Testdata - ta bort när applikation är färdig
     courses = [
         {
             name: "Webbutveckling I",
@@ -40,13 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // Kallar på funktion för rendering
+    // Renderar ut kurslistan
     renderCourses();
 });
 
 
 
-// Funktioner 
+// Funktion Hanterar formulär och input av nya kurser
 function handleSubmit(e: SubmitEvent): void {
     e.preventDefault();
     console.log("Formuläret skickades!");
@@ -69,6 +69,7 @@ function handleSubmit(e: SubmitEvent): void {
     courses.push(course);
 }
 
+// Funktion för att rendera kurser.
 function renderCourses(): void{
     // Hämtar elementet där kurserna visas
     const courseList = document.querySelector("#course-list") as HTMLElement;
@@ -81,7 +82,7 @@ function renderCourses(): void{
         // Skapa en rad för kursen
         const row = document.createElement("tr");
 
-        // Lägga till td element
+        // Lägger till td element 
 
         // Kursnamn
         const nameCell = document.createElement("td");
@@ -116,7 +117,7 @@ function renderCourses(): void{
         buttonCell.appendChild(button);
         row.appendChild(buttonCell);
 
-        // Lägga till raden i kurslistan
+        // Lägg till raden i kurslistan
         courseList.appendChild(row);
     });
 }
