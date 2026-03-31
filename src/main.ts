@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Lägger till eventlyssnare på formuläret
     form.addEventListener("submit", handleSubmit);
+
+    // Kallar på funktion för rendering
+    renderCourses();
 });
 
 
@@ -32,7 +35,7 @@ function handleSubmit(e: SubmitEvent): void {
     const progressionInput = (document.querySelector("#progression") as HTMLInputElement).value;
     const syllabusInput = (document.querySelector("#syllabus") as HTMLInputElement).value;
 
-
+    // Skapar ett nytt objekt för att lagra formulärdata
     const course : CourseInfo = {
         name:nameInput,
         code:codeInput,
@@ -40,5 +43,11 @@ function handleSubmit(e: SubmitEvent): void {
         url:syllabusInput
     }
 
-    console.log(course);
+    // Pushar in i det globala objektet
+    courses.push(course);
+}
+
+function renderCourses(): void{
+    // Tömmer befintligt innehåll i Kurslistan.
+    console.log("Testar funktionen för rendering.")
 }
