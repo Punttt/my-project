@@ -18,6 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Lägger till eventlyssnare på formuläret
     form.addEventListener("submit", handleSubmit);
 
+    // Testdata
+    courses = [
+        {
+            name: "Webbutveckling I",
+            code: "DT084G",
+            progression: "A",
+            url: "https://miun.se/webbutveckling1"
+        }
+    ];
+
     // Kallar på funktion för rendering
     renderCourses();
 });
@@ -49,9 +59,43 @@ function handleSubmit(e: SubmitEvent): void {
 
 function renderCourses(): void{
     // Hämtar elementet där kurserna visas
-    const coursList = document.querySelector("#course-list") as HTMLElement;
+    const courseList = document.querySelector("#course-list") as HTMLElement;
 
     // Tömmer befintligt innehåll i Kurslistan.
-    coursList.innerHTML = "";
+    courseList.innerHTML = "";
     
+    // Loopa igenom courses
+    courses.forEach(course => {
+        // Skapa en rad för kursen
+        const row = document.createElement("tr");
+
+        // Lägga till td element
+
+        // Kursnamn
+        const nameCell = document.createElement("td");
+        nameCell.textContent = course.name;
+        row.appendChild(nameCell);
+
+        // Kurskod
+        const codeCell = document.createElement("td");
+        codeCell.textContent = course.code;
+        row.appendChild(codeCell);
+
+        // Progression
+        const progressionCell = document.createElement("td");
+        progressionCell.textContent = course.progression;
+        row.appendChild(progressionCell);
+
+        // Kursplan (Länk)
+        const syllabusCell = document.createElement("td");
+        const link = document.createElement("a");
+        link.href = course.url;
+        link.textContent = "Läs mer..";
+        link.target = "_blank"
+        syllabusCell.appendChild(link);
+        row.appendChild(syllabusCell);
+
+        // Lägga till raden i kurslistan
+        courseList.appendChild(row);
+    });
 }
