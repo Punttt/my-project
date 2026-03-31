@@ -60,8 +60,8 @@ function handleDelete(e: Event): void {
         return;
     }
 
-    // Testkör koden för att se så knappen fungerar
-    console.log(`Kurskod: ${target.dataset.code}`);
+    const code = target.dataset.code;
+    courses.filter((course) => course.code !== code);
 }
 
 // Funktion Hanterar formulär och input av nya kurser
@@ -85,6 +85,9 @@ function handleSubmit(e: SubmitEvent): void {
 
     // Pushar in i det globala objektet
     courses.push(course);
+
+    // Renderar ut den uppdaterade kurslistan
+    renderCourses();
 }
 
 // Funktion för att rendera kurser.
