@@ -26,3 +26,14 @@ table th {
     font-size: 0.8rem;
     font-variant:small-caps
 }
+
+
+/* Utility */
+.btn {
+    border: none;
+    background-color: tomato;
+    border-radius: 4px;
+    padding: 0 0.24rem;
+    font: inherit;
+    cursor: pointer;
+}

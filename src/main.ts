@@ -99,7 +99,8 @@ function renderCourses(): void{
         const buttonCell = document.createElement("td");
         const button = document.createElement("button");
         button.textContent = "Ta bort";
-        button.id = `${course.code}`;
+        button.dataset.code = course.code;
+        button.classList.add("btn");
         buttonCell.appendChild(button);
         row.appendChild(buttonCell);
 
