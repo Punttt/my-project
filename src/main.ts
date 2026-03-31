@@ -61,7 +61,9 @@ function handleDelete(e: Event): void {
     }
 
     const code = target.dataset.code;
-    courses.filter((course) => course.code !== code);
+    courses = courses.filter((course) => course.code !== code);
+
+    renderCourses();
 }
 
 // Funktion Hanterar formulär och input av nya kurser
