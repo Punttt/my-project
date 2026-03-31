@@ -95,6 +95,14 @@ function renderCourses(): void{
         syllabusCell.appendChild(link);
         row.appendChild(syllabusCell);
 
+        // Radera-knapp
+        const buttonCell = document.createElement("td");
+        const button = document.createElement("button");
+        button.textContent = "Ta bort";
+        button.id = `${course.code}`;
+        buttonCell.appendChild(button);
+        row.appendChild(buttonCell);
+
         // Lägga till raden i kurslistan
         courseList.appendChild(row);
     });
