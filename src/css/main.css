@@ -7,7 +7,7 @@
 body{
     background-color: tomato;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1rem;
+    font-size: 12px;
     line-height: 1.6;
 }
 
@@ -22,10 +22,28 @@ table{
     width: 100%;
 }
 
-table th {
+th {
     font-size: 0.8rem;
     font-variant:small-caps
 }
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: tomato;
+  color: white;
+}
+
+td {
+    text-align: center;
+}
+
 
 
 /* Utility */

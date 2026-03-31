@@ -25,6 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
             code: "DT084G",
             progression: "A",
             url: "https://miun.se/webbutveckling1"
+        },
+        {
+            name: "Webbutveckling I",
+            code: "DT084G",
+            progression: "A",
+            url: "https://miun.se/webbutveckling1"
+        },
+        {
+            name: "Webbutveckling I",
+            code: "DT084G",
+            progression: "A",
+            url: "https://miun.se/webbutveckling1"
         }
     ];
 
