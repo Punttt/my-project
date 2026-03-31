@@ -116,3 +116,13 @@ td {
 section {
     margin-bottom: 2rem;
 }
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 450px) {
+    th:nth-child(3),
+    td:nth-child(3) {
+        display: none;
+    }
+}
