@@ -9,7 +9,8 @@
   </head>
   <body>
     <main>
-      <section id="course-section">
+      <h2>Lägg till kurser: </h2>
+      <section id="add-course-section">
         <form id="course-form">
           <label for="name">Kursnamn:</label>
           <input type="name" id="name">
@@ -35,8 +36,21 @@
         </form>
       </section>
 
-
-
+      <section id="list-course-section">
+        <h2>Mina kurser:</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Kursnamn:</th>
+              <th>Kurskod:</th>
+              <th>Progression:</th>
+              <th>Kursplan:</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="course-list"></tbody>
+        </table>
+      </section>
     </main>
     <script type="module" src="/src/js/main.ts"></script>
   </body>
