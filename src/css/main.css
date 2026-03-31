@@ -8,6 +8,10 @@ button:hover{
     opacity: 0.8;
 }
 
+a{
+    color: rgb(160, 4, 4);
+}
+
 body{
     background-color: tomato;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -26,7 +30,8 @@ main {
     background-color: #fff;
     max-width: 960px;
     margin: 0 auto;
-    padding: 2rem 1rem
+    padding: 2rem 1rem;
+    border-radius: 8px;
 }
 
 footer{
