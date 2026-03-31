@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="/src/css/main.css">
   </head>
   <body>
+    <header>
+      <h1>Laboration 1</h1>
+    </header>
     <main>
       <h2>Lägg till kurser: </h2>
       <section id="add-course-section">
+        <div class="form-wrapper">
         <form id="course-form">
           <label for="name">Kursnamn:</label>
           <input type="name" id="name">
@@ -18,6 +22,10 @@
 
           <label for="code">Kurskod:</label>
           <input type="text" id="code">
+          <br>
+          
+          <label for="syllabus">Kursplan (URL):</label>
+          <input type="url" id="syllabus">
           <br>
 
           <label for="progression">Progression:</label>
@@ -28,12 +36,9 @@
           </select>
           <br>
 
-          <label for="syllabus">Kursplan (URL):</label>
-          <input type="url" id="syllabus">
-          <br>
-
           <button type="submit" id="submitBtn">Lägg till kurs</button>
         </form>
+      </div>
       </section>
 
       <section id="list-course-section">
@@ -52,6 +57,11 @@
         </table>
       </section>
     </main>
+    <footer>
+      <p>
+        &copy; Pontus Johansson - DT208G
+      </p>
+    </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
