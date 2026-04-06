@@ -18,27 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Lägger till eventlyssnare på formuläret
     form.addEventListener("submit", handleSubmit);
 
-    // Testdata - ta bort när applikation är färdig
-    courses = [
-        {
-            name: "Webbutveckling I",
-            code: "DT084G",
-            progression: "A",
-            url: "https://miun.se/webbutveckling1"
-        },
-        {
-            name: "Webbutveckling I",
-            code: "DT045T",
-            progression: "A",
-            url: "https://miun.se/webbutveckling1"
-        },
-        {
-            name: "Webbutveckling I",
-            code: "DT031H",
-            progression: "A",
-            url: "https://miun.se/webbutveckling1"
-        }
-    ];
+    // Kolla om det finns sparade kurser i Local-storage
+    const saved = localStorage.getItem("courses");
+    if(saved) {
+        courses = JSON.parse(saved);
+    }
 
     // Hämtar kurslista
     const courseListEl = document.querySelector("#course-list") as HTMLElement;
@@ -64,6 +48,9 @@ function handleDelete(e: Event): void {
     const code = target.dataset.code;
     courses = courses.filter((course) => course.code !== code);
 
+    // Spara uppdatera lista efter borttagna kurser
+    localStorage.setItem("courses", JSON.stringify(courses));
+
     // Renderar den uppdaterade listan
     renderCourses();
 }
@@ -83,12 +70,18 @@ function handleSubmit(e: SubmitEvent): void {
     const course : CourseInfo = {
         name:nameInput,
         code:codeInput,
-        progression:progressionInput,
+        progression:progressionInput as 'A' | 'B' | 'C',
         url:syllabusInput
     }
 
     // Pushar in i det globala objektet
     courses.push(course);
+
+    // Spara uppdatera lista efter tillagda kurser
+    localStorage.setItem("courses", JSON.stringify(courses));
+
+    // Rensa formuläret
+    (document.querySelector("#course-form") as HTMLFormElement).reset();
 
     // Renderar ut den uppdaterade kurslistan
     renderCourses();
